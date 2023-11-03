@@ -65,13 +65,11 @@ object Monads extends App {
 
   def ask: DbReader[Db] = Reader(db => db)
 
-  def findUsername(userId: Int): DbReader[Option[String]] = {
+  def findUsername(userId: Int): DbReader[Option[String]] =
     Reader(db => db.usernames.get(userId))
-  }
 
-  def checkPassword(username: String, password: String): DbReader[Boolean] = {
+  def checkPassword(username: String, password: String): DbReader[Boolean] =
     Reader(db => db.passwords.get(username).contains(password))
-  }
 
   def checkLogin(userId: Int, password: String): DbReader[Boolean] = for {
     userName <- findUsername(userId)
