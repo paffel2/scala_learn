@@ -36,14 +36,13 @@ object Main extends App {
 
   val zo = ZIO.fromOption(Some(123))
 
-  val askForName = Console.printLine("Как тебя зовут?")
-  // ZIO.succeed(println("Как тебя зовут?"))
+  def askForName = Console.printLine("Как тебя зовут?")
 
-  val readName = Console.readLine
+  def readName = Console.readLine
 
   def greet(name: String): Task[Unit] = Console.printLine(s"Привет, $name!")
 
-  val greater: Task[Unit] = for {
+  def greater: Task[Unit] = for {
     _ <- askForName
     name <- readName
     _ <- greet(name)
