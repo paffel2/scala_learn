@@ -27,7 +27,8 @@ libraryDependencies ++= Seq(
 libraryDependencies ++= Seq(
   "dev.zio" %% "zio-test" % "2.0.18" % Test,
   "dev.zio" %% "zio-test-sbt" % "2.0.18" % Test,
-  "dev.zio" %% "zio-test-magnolia" % "2.0.18" % Test
+  "dev.zio" %% "zio-test-magnolia" % "2.0.18" % Test,
+  "dev.zio" %% "zio-streams" % "2.0.18"
 )
 libraryDependencies += "org.scalatest" %% "scalatest" % "3.2.11" % Test
 testFrameworks += new TestFramework("zio.test.sbt.ZTestFramework")
